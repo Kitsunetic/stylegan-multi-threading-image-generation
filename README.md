@@ -1,8 +1,9 @@
-# Modified StyleGAN
+# Multithreading Image Generation
 
 ## Parallelism
 
-Original StyleGAN is slower because its single batch size and single thread.
+Generating images with original StyleGAN using [pretrained_example.py](./pretrained_example.py)
+is slower because of its single batch size and single thread.
 I modified image generation codes to use multiple threads and multiple batch size.
 
 ### Thread Pipeline
