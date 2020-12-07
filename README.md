@@ -1,3 +1,35 @@
+# Modified StyleGAN
+
+## Parallelism
+
+Original StyleGAN is slower because its single batch size and single thread.
+I modified image generation codes to use multiple threads and multiple batch size.
+
+### Thread Pipeline
+
+![ThreadPipeline](./img/ThreadPipeline.png)
+
+## Usage Example
+
+```bash
+python generate_images.py {directory to save generated images} {number of images to generate}
+
+# Generate 100 images into 'data100' 
+python generate_images.py data100 100
+
+# Generate 1000 images into 'data1000' with batch-size 4 and 2 threads.
+# Check your GPU memory is enough before increase batch size.
+python generate_images.py data1000 1000 --batch-size 4 --num-threads 2 
+```
+
+<br><br>
+
+---
+
+---
+
+<br><br>
+
 ## StyleGAN &mdash; Official TensorFlow Implementation
 ![Python 3.6](https://img.shields.io/badge/python-3.6-green.svg?style=plastic)
 ![TensorFlow 1.10](https://img.shields.io/badge/tensorflow-1.10-green.svg?style=plastic)
